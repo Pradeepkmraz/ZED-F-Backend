@@ -11,6 +11,20 @@ with open("language_model.pkl", "rb") as f:
 with open("vectorizer.pkl", "rb") as f:
     cv = pickle.load(f)
 
+@app.route('/', methods=['GET'])
+def home():
+    return """
+    <html>
+        <head><title>Language Detector API</title></head>
+        <body style="font-family: Arial, sans-serif; text-align: center; padding-top: 100px; background-color: #f4f7f6;">
+            <h1 style="color: #2c3e50;">🌐 Language Detection API is Online!</h1>
+            <p style="color: #7f8c8d; font-size: 18px;">The backend is running perfectly on Render.</p>
+            <p style="color: #e67e22; font-weight: bold;">Send POST requests to: <code>/predict</code></p>
+        </body>
+    </html>
+    """
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
