@@ -1,4 +1,9 @@
-
-scikit-learn
+<<<<<<< HEAD
+streamlit
+scikit-learn==1.6.1
 pandas
 numpy
+flask
+flask-cors
+=======
+
