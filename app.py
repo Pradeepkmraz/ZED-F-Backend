@@ -21,6 +21,10 @@ try:
     model, cv = load_saved_assets()
 except FileNotFoundError:
     st.error("Error: 'language_model.pkl' or 'vectorizer.pkl' not found. Make sure you uploaded them to GitHub!")
+    st.stop()
+except Exception as e:
+    st.error(f"Error loading model components: {e}")
+    st.stop()
 
 # 3. Create Interactive Frontend Web Elements
 user_input = st.text_area("Enter text here:", placeholder="e.g., My name is Pradeep Yadav")
